@@ -11,7 +11,9 @@ namespace L6_crystalShop
         static void Main(string[] args)
         {
             Random random = new Random();
-            int pricePerCrystal = random.Next(10, 16);
+            int minPriceCrystal = 10;
+            int maxPriceCrystal = 16;
+            int pricePerCrystal = random.Next(minPriceCrystal, maxPriceCrystal);
             int userMoney = 0;
             int userCrystals = 0;
             int desiredCountOfCrystals = 0;
@@ -23,7 +25,7 @@ namespace L6_crystalShop
             desiredCountOfCrystals = Convert.ToInt32(Console.ReadLine());
 
             userMoney -= desiredCountOfCrystals * pricePerCrystal;
-            userCrystals = desiredCountOfCrystals;
+            userCrystals += desiredCountOfCrystals;
 
             Console.WriteLine($"\nУ вас монет: {userMoney}, кристаллов: {userCrystals}\n");
         }
